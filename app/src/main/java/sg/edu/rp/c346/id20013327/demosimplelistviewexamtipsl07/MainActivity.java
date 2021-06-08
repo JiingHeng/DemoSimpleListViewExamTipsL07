@@ -1,0 +1,46 @@
+package sg.edu.rp.c346.id20013327.demosimplelistviewexamtipsl07;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    ListView lvExamTips;
+//    String[] examTipsArray1; //Array
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        lvExamTips = findViewById(R.id.listViewExamTips);
+
+        ArrayList<String> examTipsArray = new ArrayList<String>();
+        examTipsArray.add("Don't just read the code, code it as much as possible during each practical session");
+        examTipsArray.add("Seek help from the lecturer ASAP, don't wait till you lost in the jungle");
+        examTipsArray.add("Prepare your template source code for each topic");
+        examTipsArray.add("Create a few empty Android projects to speed up your coding during the exam");
+        examTipsArray.add("Ensure that your Android Studio is up and running before the exam");
+
+        ArrayAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, examTipsArray);
+        lvExamTips.setAdapter(adapter);
+
+//        examTipsArray1 = new String[5];
+//        examTipsArray1[0] = "Don't just read the code, code it as much as possible during each practical session";
+//        examTipsArray1[1] = "Seek help from the lecturer ASAP, don't wait till you lost in the jungle";
+//        examTipsArray1[2] = "Prepare your template source code for each topic";
+//        examTipsArray1[3] = "Create a few empty Android projects to speed up your coding during the exam";
+//        examTipsArray1[4] = "Ensure that your Android Studio is up and running before the exam";
+//
+//        //new
+//        ArrayAdapter adapter1 = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, examTipsArray1);
+//
+//        //important
+//        lvExamTips.setAdapter(adapter);
+
+    }
+}
